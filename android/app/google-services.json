@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1029808453023",
+    "firebase_url": "https://evently-ac302.firebaseio.com",
+    "project_id": "evently-ac302",
+    "storage_bucket": "evently-ac302.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029808453023:android:53053337be444f47eaf9aa",
+        "android_client_info": {
+          "package_name": "androx.evently"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029808453023-o7s2lhaeeteiq28k695c4mn3k7lrcr75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSvAeIG-Qnh-1_uLQkT9ehYWTSX4HB1aU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029808453023-o7s2lhaeeteiq28k695c4mn3k7lrcr75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
