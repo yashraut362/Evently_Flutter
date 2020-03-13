@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:location/location.dart';
+import 'dart:async';
 
 class AddPlace extends StatefulWidget {
   @override
@@ -8,6 +11,8 @@ class AddPlace extends StatefulWidget {
 
 class _AddPlaceState extends State<AddPlace> {
   final _firestore = Firestore.instance;
+  Geoflutterfire geo = Geoflutterfire();
+  Location location = new Location();
 
   TextEditingController _textEditingController = TextEditingController();
   TextEditingController _textEditingController1 = TextEditingController();
@@ -20,6 +25,15 @@ class _AddPlaceState extends State<AddPlace> {
       _textEditingController2.text = "";
     });
   }
+
+  // Future<DocumentReference> _addGeoPoint() async {
+  //   var pos = await location.getLocation();
+  //   GeoFirePoint point =
+  //       geo.point(latitude: pos.latitude, longitude: pos.longitude);
+  //   return _firestore.collection('places').add({
+  //     'position': point.data,
+  //   });
+  // }
 
   String titletext;
   String descriptiontext;
@@ -92,14 +106,19 @@ class _AddPlaceState extends State<AddPlace> {
               FlatButton(
                 color: Colors.blue,
                 splashColor: Colors.blue,
-                onPressed: () {
+                onPressed: () async {
+                  var pos = await location.getLocation();
                   //Navigator.pushNamed(context,initialScreen.id);
+                  GeoFirePoint point = geo.point(
+                      latitude: pos.latitude, longitude: pos.longitude);
                   _firestore.collection('places').add({
                     'Title': titletext,
+                    'position': point.data,
                     'Category': Currentselectedtext,
                     'Description': descriptiontext,
                   });
                   _onClear();
+                  //     _addGeoPoint();
                 },
                 child: Text(
                   'Submit',
