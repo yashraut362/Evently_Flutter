@@ -12,19 +12,23 @@ class _AddEventState extends State<AddEvent> {
   TextEditingController _textEditingController = TextEditingController();
   TextEditingController _textEditingController1 = TextEditingController();
   TextEditingController _textEditingController2 = TextEditingController();
+  TextEditingController _textEditingController3 = TextEditingController();
 
   _onClear() {
     setState(() {
       _textEditingController.text = "";
       _textEditingController1.text = "";
       _textEditingController2.text = "";
+      _textEditingController3.text = "";
     });
   }
 
   String titletext;
   String descriptiontext;
+  String date;
   String Currentselectedtext;
   String categoryname = "";
+
   var names = [
     'Others',
     'Marathon',
@@ -66,6 +70,15 @@ class _AddEventState extends State<AddEvent> {
                   descriptiontext = value;
                 },
               ),
+              TextField(
+                controller: _textEditingController3,
+                decoration: InputDecoration(
+                  labelText: 'Date',
+                ),
+                onChanged: (value) {
+                  date = value;
+                },
+              ),
               Row(
                 children: <Widget>[
                   Text(
@@ -99,6 +112,7 @@ class _AddEventState extends State<AddEvent> {
                     'Title': titletext,
                     'Category': Currentselectedtext,
                     'Description': descriptiontext,
+                    'Date': date,
                   });
                   _onClear();
                 },
