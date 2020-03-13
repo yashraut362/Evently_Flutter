@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
               icon: new Icon(Icons.map), title: new Text('Map')),
           BottomNavigationBarItem(
-              icon: new Icon(Icons.person), title: new Text('Account'))
+              icon: new Icon(Icons.add_location), title: new Text('Contribute'))
         ],
       ),
     );
