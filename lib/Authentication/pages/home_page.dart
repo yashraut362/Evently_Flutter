@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
     return new Scaffold(
       appBar: new AppBar(
         automaticallyImplyLeading: false,
-        title: new Text('Flutter login demo'),
+        title: new Text('Evently'),
         actions: <Widget>[
           new FlatButton(
               child: new Text('Logout',
