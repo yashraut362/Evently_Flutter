@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ComplaintPage extends StatefulWidget {
+class Cobblers extends StatefulWidget {
   @override
-  _ComplaintPageState createState() => _ComplaintPageState();
+  _CobblersState createState() => _CobblersState();
 }
 
-class _ComplaintPageState extends State<ComplaintPage> {
+class _CobblersState extends State<Cobblers> {
   @override
   void initState() {
     super.initState();
@@ -24,6 +24,10 @@ class _ComplaintPageState extends State<ComplaintPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Center(child: Text("Information about Cobblers")),
+      ),
       body: showDrivers(),
     );
   }
@@ -42,13 +46,8 @@ class _ComplaintPageState extends State<ComplaintPage> {
                   child: Text("new"),
                 ),
                 title: Text("${querySnapshot.documents[i].data['Title']}"),
-                subtitle: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Text("${querySnapshot.documents[i].data['Date']}"),
+                subtitle:
                     Text("${querySnapshot.documents[i].data['Category']}"),
-                  ],
-                ),
                 children: <Widget>[
                   Divider(
                     thickness: 1.0,
@@ -83,7 +82,7 @@ class _ComplaintPageState extends State<ComplaintPage> {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 2.0),
                             ),
-                            Text('Navigate me'),
+                            Text('Navigate Me'),
                           ],
                         ),
                       ),
@@ -133,6 +132,9 @@ class _ComplaintPageState extends State<ComplaintPage> {
 
   //get firestore instance
   getDriversList() async {
-    return await Firestore.instance.collection('events').getDocuments();
+    return await Firestore.instance
+        .collection('places')
+        .where('Category', isEqualTo: 'Cobblers')
+        .getDocuments();
   }
 }

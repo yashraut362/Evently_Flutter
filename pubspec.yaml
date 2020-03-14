@@ -26,11 +26,19 @@ dependencies:
   firebase_auth: ^0.15.4
   firebase_database: ^3.1.1
   cloud_firestore: ^0.13.4+1
-  google_maps_flutter: ^0.5.24+1
+  google_maps_flutter: ^0.5.17
+  google_maps_webservice: ^0.0.14
+  location: ^2.3.5
   geoflutterfire: ^2.1.0
-  location: ^2.5.4
   geolocator: ^5.3.0
   expansion_tile_card: ^1.0.2+2
+  firebase_storage: ^3.1.3
+  image_picker: ^0.6.3+4
+  flutter_map:
+  geocoder:
+  url_launcher: ^5.4.2
+  font_awesome_flutter: ^8.7.0
+  permission: ^0.1.7
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +61,19 @@ flutter:
     - assets/events.png
     - assets/login.png
     - assets/thirdpage.png
+    - assets/green.png
+    - assets/red.png
+    - assets/violet.png
+    - assets/blue.png
+    - assets/washroom.jpg
+    - assets/cobblers.jpg
+    - assets/teastall.jpg
+    - assets/medicals.jpg
+    - assets/homepage.png
+    - assets/location.png
+    - assets/welcome.png
+    
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
